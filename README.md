@@ -1,2 +1,29 @@
 # RESTFUL_API
-A repository created for practicing and learning RESTful API development in Python.
+简单来说，RESTful API 是一种基于 REST（表述性状态转移，Representational State Transfer） 原则设计的 应用程序接口（API）。
+它允许不同的应用程序通过 HTTP 协议 进行 数据交换，通常使用 JSON 格式。
+
+1. 工作原理
+RESTful API 采用 客户端–服务器（Client–Server） 模型。
+客户端（例如网页或手机应用）通过一个称为 endpoint（端点） 的地址向 服务器 发送请求。
+服务器 处理请求，从数据库中读取或修改数据，然后把结果返回给客户端。
+每个 HTTP 请求都是 独立的，也就是说服务器不会在请求之间保存客户端的状态（这就是 无状态 原则）。
+
+3. 常用的 HTTP 方法
+RESTful API 使用标准的 HTTP 方法来定义操作：
+ - GET：获取数据（例如查看产品列表）。
+ - POST：创建新数据（例如注册新账号）。
+ - PUT：更新一个资源的全部内容。
+ - PATCH：部分更新资源内容。
+ - DELETE：删除数据。
+例如，要获取 ID 为 5 的学生信息，客户端会发送 GET /api/students/5，服务器则返回该学生的详细信息（通常是 JSON 格式）。
+
+3. REST 的核心原则
+客户端–服务器分离： 客户端与服务器相互独立，便于开发与维护。
+ - 无状态（Stateless）： 每个请求必须包含所有必要的信息，服务器不保存上下文。
+ - 可缓存（Cacheable）： 响应数据可以被缓存，以提高性能。
+ - 统一接口（Uniform Interface）： 所有 API 遵循一致的结构和命名规范。
+ - 分层系统（Layered System）： 系统可以分成多个层次（如代理、负载均衡），客户端无需了解内部结构。
+
+4. 优点
+RESTful API 简单、灵活、可扩展，并且在网络通信中 高效。
+它是目前连接 前端与后端系统 的最常见标准，广泛应用于网页、移动应用和物联网（IoT）等领域。
