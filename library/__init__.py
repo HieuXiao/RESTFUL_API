@@ -1,6 +1,6 @@
 from flask import Flask, request, Blueprint
 from .books.controller import books
-from .extension import db
+from .extension import db, ma
 from .model import Students, Books, Author, Category, Borrows
 import os
 
@@ -17,6 +17,7 @@ def create_app(config_file="config.py"):
     app.config.from_pyfile(config_file)
     # Create database
     db.init_app(app)
+    ma.init_app(app)
     # Create database if not exist
     create_db(app)
     # Register blueprint
