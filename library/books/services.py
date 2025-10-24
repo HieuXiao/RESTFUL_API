@@ -6,7 +6,6 @@ from flask import request, jsonify
 book_schema = BookSchema()
 books_schema = BookSchema(many=True)
 
-
 def add_book_service():
     data = request.json
     if (data and ('name' in data) and ('page_count' in data)
@@ -19,12 +18,12 @@ def add_book_service():
             new_book = Books(name, page_count, author_id, category_id)
             db.session.add(new_book)
             db.session.commit()
-            return 'Add new book successfully', 201
+            return jsonify({"message" : "Add book successfully!"}), 201
         except IndentationError:
             db.session.rollback()
-            return "Can't add new book", 400
+            return jsonify({"message" : "Can not add book!"}), 400
     else:
-        return 'Request error', 400
+        return jsonify({"message" : 'Request error'}), 400
 
 
 def get_book_by_id_service(id):

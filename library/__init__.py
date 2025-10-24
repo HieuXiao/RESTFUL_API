@@ -1,7 +1,7 @@
 from flask import Flask, request, Blueprint
 from .books.controller import books
 from .extension import db, ma
-from .model import Students, Books, Author, Category, Borrows
+from .model import Books, Author, Category
 import os
 
 def create_db(app):
